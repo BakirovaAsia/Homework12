@@ -5,6 +5,10 @@ services:
     restart: always
     volumes:
       - "/home/admin/datamysql:/var/lib/mysql "
+    ports:
+      - "3306:3306"
+    security_opt:
+      - seccomp:unconfined  
       
   phpmyadmin:
     image: phpmyadmin
