@@ -2,4 +2,4 @@ FROM tomcat:8.5
 
 WORKDIR /tmp/artifacts/
 
-CMD cp ./*.war /var/lib/tomcat/webapps/App42PaaS-Java-MySQL-Sample.war
+CMD cp /tmp/artifacts/*.war /var/lib/tomcat/webapps/App42PaaS-Java-MySQL-Sample.war
