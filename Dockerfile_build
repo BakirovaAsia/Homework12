@@ -1,9 +1,8 @@
 FROM ubuntu:latest
 
 RUN apt-get update \
-    && apt-get install maven -y \
-    && apt-get install git -y
-    
+    && apt-get install maven -y 
+
 COPY . /home/app/
 
 WORKDIR /home/app/
