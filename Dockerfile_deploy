@@ -1,2 +1,3 @@
-FROM tomcat:latest
+FROM tomcat:8.5
+EXPOSE 8083
 CMD cp -r /tmp/artifacts/* /usr/local/tomcat/webapps/

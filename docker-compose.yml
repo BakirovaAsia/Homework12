@@ -30,7 +30,7 @@ services:
     depends_on:
       - building
     ports:
-      - "8083:8080"
+      - "8083:8083"
       
 volumes:
   war-dir:
