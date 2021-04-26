@@ -19,14 +19,14 @@ services:
       context: .
       dockerfile: Dockerfile_build
     volumes:
-      - "war-dir: /home/artifacts/"
+      - "war-dir: /home/artifacts"
   
   deploing:
     build:
       context: .
       dockerfile: Dockerfile_deploy
     volumes:
-      - "war-dir: /tmp/artifacts/"
+      - "war-dir: /tmp/artifacts"
     depends_on:
       - building
       
