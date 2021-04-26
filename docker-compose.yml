@@ -15,18 +15,24 @@ services:
       - 8085:80
 
   building:
-    context: .
-    dockerfile: Dockerfile_build
-    volumes:
-      - war_dir: '/home/app/target'
+    build:
+      context: .
+      dockerfile: Dockerfile_build
+      volumes:
+        - type: volume
+          source: war-dir
+          target: /home/app/target
   
   deploing:
-    context: .
-    dockerfile: Dockerfile_deploy
-    volumes:
-      - war_dir: '/tmp/app'
-    depends_on:
-      - building
+    build:
+      context: .
+      dockerfile: Dockerfile_deploy
+      volumes:
+        - type: volume
+          source: war-dir
+          target: /tmp/app
+      depends_on:
+       - building
       
 volumes:
-  war_dir:
+  war-dir:
