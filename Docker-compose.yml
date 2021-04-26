@@ -1,0 +1,23 @@
+version: "3"
+services:
+  db:\  \   
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_USER: users
+      MYSQL_PASSWORD: 1234
+
+  building:
+    dockerfile: Dockerfile_build
+    volumes:
+      - war_dir: /home/app/target
+  deploing:
+    dockerfile: Dockerfile_deploy
+    volumes:
+      - war_dir: /tmp/app
+    depends_on:
+      - building
+      
+volumes:
+  war_dir:
