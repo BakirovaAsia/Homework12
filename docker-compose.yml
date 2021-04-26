@@ -32,7 +32,7 @@ services:
         source: war-dir
         target: /tmp/app
     depends_on:
-       - building
+      - building
       
 volumes:
   war-dir:
