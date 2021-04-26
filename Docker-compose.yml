@@ -7,16 +7,24 @@ services:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_USER: users
       MYSQL_PASSWORD: 1234
+      
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8085:80
 
   building:
+    context: .
     dockerfile: Dockerfile_build
     volumes:
-      - war_dir: /home/app/target
+      - war_dir: '/home/app/target'
   
   deploing:
+    context: .
     dockerfile: Dockerfile_deploy
     volumes:
-      - war_dir: /tmp/app
+      - war_dir: '/tmp/app'
     depends_on:
       - building
       
