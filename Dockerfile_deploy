@@ -1,3 +1,4 @@
 FROM tomcat:8.5
-EXPOSE 8083
-CMD cp -r /tmp/artifacts/* /usr/local/tomcat/webapps/
+
+CMD cp -r /tmp/artifacts/* /usr/local/tomcat/webapps/ \
+    && /usr/local/tomcat/bin/catalina.sh run
