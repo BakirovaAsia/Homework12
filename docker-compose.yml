@@ -29,6 +29,8 @@ services:
       - "war-dir:/tmp/artifacts/"
     depends_on:
       - building
+    ports:
+      - "8080:8080"
       
 volumes:
   war-dir:
