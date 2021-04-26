@@ -1,3 +1,5 @@
 FROM tomcat:8.5
 
-CMD cp /tmp/*.war /var/lib/tomcat/webapps/
+WORKDIR /tmp/artifacts/
+
+CMD cp ./*.war /var/lib/tomcat/webapps/

@@ -3,3 +3,6 @@ COPY . /home/app/
 
 WORKDIR /home/app/
 RUN mvn package
+
+WORKDIR /home/artifacts/
+RUN cp -r /home/app/target/* .
