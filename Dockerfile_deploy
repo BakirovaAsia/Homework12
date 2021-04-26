@@ -2,4 +2,4 @@ FROM tomcat:8.5
 
 WORKDIR /tmp/app
 
-RUN cp *.war /var/lib/tomcat/webapps/
+RUN cp ./*.war /var/lib/tomcat/webapps/

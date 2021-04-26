@@ -26,7 +26,7 @@ services:
       context: .
       dockerfile: Dockerfile_deploy
     volumes:
-      - "war-dir: /home/app/target"
+      - "war-dir: /tmp/app"
     depends_on:
       - building
       
