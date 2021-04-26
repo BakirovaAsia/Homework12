@@ -12,6 +12,7 @@ services:
     dockerfile: Dockerfile_build
     volumes:
       - war_dir: /home/app/target
+  
   deploing:
     dockerfile: Dockerfile_deploy
     volumes:
