@@ -34,6 +34,7 @@ services:
       - "war-dir:/tmp/artifacts/"
     depends_on:
       - building
+        db
     ports:
       - "8083:8080"
       
