@@ -9,4 +9,4 @@ WORKDIR /home/app/
 RUN mvn clean && mvn package
 
 WORKDIR /home/artifacts/
-RUN cp -r /home/app/target/*.war ./*.war
+RUN cp -r /home/app/target/* .
