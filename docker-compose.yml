@@ -1,8 +1,11 @@
 version: "3"
 services:
   db:
+    name: db-service
     image: mysql
     restart: always
+    volumes:
+        - "/home/admin/datamysql/:/var/lib/mysql/"
     ports:
       - "3306:3306"
     security_opt:
