@@ -4,10 +4,12 @@ services:
     container_name: db-service
     image: mysql
     restart: always
+    volumes:
+      - "data-dir:/var/lib/mysql/"
     ports:
       - "3306:3306"
-    security_opt:
-      - seccomp:unconfined  
+    expose:
+      - "3306"
     environment:
       MYSQL_ROOT_PASSWORD: 123456
       
@@ -37,3 +39,4 @@ services:
       
 volumes:
   war-dir:
+  data-dir:
