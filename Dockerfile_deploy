@@ -1,5 +1,5 @@
 FROM tomcat:8.5
 
 CMD cp -r /tmp/artifacts/* /usr/local/tomcat/webapps/ \
-    && cp /tmp/artifacts/*/Config.properties /usr/local/tomcat/ROOT/Config.properties \
+    && mkdir /usr/local/tomcat/ROOT/ && cp /tmp/artifacts/*/Config.properties /usr/local/tomcat/ROOT/Config.properties \
     && /usr/local/tomcat/bin/catalina.sh run
