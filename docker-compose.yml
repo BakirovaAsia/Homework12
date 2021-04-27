@@ -1,7 +1,7 @@
 version: "3"
 services:
-  db:
-    name: db-service
+  db: 
+    container_name: db-service
     image: mysql
     restart: always
     volumes:
